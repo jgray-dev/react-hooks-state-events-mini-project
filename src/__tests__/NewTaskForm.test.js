@@ -7,7 +7,7 @@ import App from "../components/App";
 test("calls the onTaskFormSubmit callback prop when the form is submitted", () => {
   const onTaskFormSubmit = jest.fn();
   render(
-    <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={onTaskFormSubmit} />
+    <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={onTaskFormSubmit} />,
   );
 
   fireEvent.change(screen.queryByLabelText(/Details/), {
@@ -24,7 +24,7 @@ test("calls the onTaskFormSubmit callback prop when the form is submitted", () =
     expect.objectContaining({
       text: "Pass the tests",
       category: "Code",
-    })
+    }),
   );
 });
 
